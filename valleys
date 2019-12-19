@@ -1,0 +1,26 @@
+
+let n = 12;
+let s = 'DDUUDDUDUUUD';
+ 
+let count = 0;
+let arrRes = [];
+let result = 0;
+ 
+s = s.split('');
+ 
+for( let i = 0; i < n; i++){
+  s[i] === 'U' ? count += 1 : count -= 1
+  arrRes.push(count)
+}
+ 
+for( let a = 0; a < arrRes.length; a++){
+  if(arrRes[a] === 0 && arrRes[a + 1] < 0){
+    result += 1;
+  } 
+}
+ 
+if(arrRes[0] === -1){
+  result += 1;
+}
+ 
+console.log(result)
