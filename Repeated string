@@ -1,0 +1,15 @@
+let s = "asdfa";
+let n = 9;
+
+let remaind = n % s.length;
+let newN = (n - remaind) / s.length;
+
+let sArr = s.split("").filter(item => item === "a");
+
+let result = newN * sArr.length;
+
+let ost = s.split("").splice(0, remaind).filter(item => item === "a").length;
+
+result += ost;
+
+console.log(result);
