@@ -1,0 +1,18 @@
+let i = 0;
+
+let newS = s[0];
+
+console.log(s.length);
+
+while(i < s.length){
+  if(s[i] !== s[i+1] && s[i + 1] !== undefined){
+    newS += s[i+1];
+    i++;
+  } else {
+    i++;
+    continue
+  }
+}
+
+let result = s.length - newS.length;
+return result
