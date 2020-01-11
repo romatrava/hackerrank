@@ -1,0 +1,11 @@
+arr.sort((a,b) => a-b);
+let resArr = [];
+
+console.log(arr)
+for(let i = 0; i < arr.length - 1; i++){
+  let val = Math.abs(arr[i] - arr[i + 1]);
+  resArr.push(val);
+}
+
+resArr.sort((a,b) => a-b);
+return resArr[0]
