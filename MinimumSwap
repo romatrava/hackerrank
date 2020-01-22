@@ -1,0 +1,18 @@
+let arr = [4, 3, 1, 2];
+
+let count = 0;
+let  i = 0;
+
+while(i < arr.length){
+  if(arr[i] !== i + 1){
+    let a = arr[i];
+    arr[arr.indexOf(i+1)] = a;
+    arr[i] = i + 1;
+    count++;
+    i++
+  } else {
+    i++;
+  }
+}
+
+console.log(count);
