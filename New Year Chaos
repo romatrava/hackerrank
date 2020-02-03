@@ -1,0 +1,46 @@
+let q = [1, 2, 5, 3, 4, 7, 8, 6];
+
+let count = 0;
+let curr = 0;
+let currCount = 0;
+
+for(let i = 0; i < q.length; i++){
+  if(q[i] === i + 1){
+    continue;
+  }
+
+  if(count === 'Too chaotic'){
+    break;
+  }
+
+  for(let j = i; j < q.length; j++){
+
+    if(q[j] > q[j+1]){
+
+      if(curr !== q[j]){
+        currCount = 0;
+        curr = q[j];
+        currCount++
+      } else if (curr === q[j] && currCount < 2){
+        currCount++
+      } else{
+        count = 'Too chaotic';
+        break
+      }
+
+      swap(q, j);
+      count++;
+    }
+
+  }
+}
+
+
+function swap(q, i){
+  let val = 0;
+  val = q[i + 1];
+  q[i + 1] = q[i];
+  q[i] = val;
+}
+
+console.log(count)
