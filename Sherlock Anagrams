@@ -1,0 +1,22 @@
+let s = 'kkkk';
+
+let substrArr = [];
+let result = 0;
+
+
+for(let i = 0; i < s.length; i++){
+  for(let j = i; j < s.length; j++){
+    let val = s.slice(i, j + 1).split('').sort();
+    val = val.join('');
+    substrArr.push(val);
+  }
+}
+
+for(let a = 0; a < substrArr.length; a++){
+  for(let b = a + 1; b < substrArr.length; b++){
+    if(substrArr[a] === substrArr[b]){
+      result += 1;
+    }
+  }
+}
+return result
